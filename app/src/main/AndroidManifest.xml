@@ -22,7 +22,8 @@
         </activity>
         <activity
             android:name=".ListActivity"
-            android:label="@string/title_activity_list" >
+            android:label="@string/title_activity_list"
+            android:stateNotNeeded="true">
         </activity>
     </application>
 
