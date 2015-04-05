@@ -48,15 +48,13 @@ public class Downloader {
     private class DownloadTask extends AsyncTask<String, Void, Bitmap> {
         private final WeakReference<ImageView> imageViewReference;
         String url;
-        ImageView imageView;
         public DownloadTask(ImageView imageView) {
-            this.imageView=imageView;
             imageViewReference = new WeakReference<ImageView>(imageView);
         }
 
         @Override
         protected void onPreExecute() {
-            imageView.setImageResource(R.mipmap.ic_launcher);
+            super.onPreExecute();
         }
 
         @Override

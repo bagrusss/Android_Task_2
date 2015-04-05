@@ -3,7 +3,10 @@ package ru.kozhushko.task_1;
 import android.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
 
 public class ListActivity extends ActionBarActivity{
 
@@ -16,8 +19,7 @@ public class ListActivity extends ActionBarActivity{
         Bundle args=new Bundle();
         args.putString("JSON",getIntent().getStringExtra("JSON"));
         fragment.setArguments(args);
-        Log.d("d","ListActivity OnCreate");
-        getFragmentManager().beginTransaction().replace(R.id.fragment,fragment).commit();
+        getFragmentManager().beginTransaction().add(R.id.fragment,fragment).commit();
     }
 
 }

@@ -24,7 +24,6 @@ public class ListAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
     private Downloader loader;
     private JSONObject json=null;
-    Context context;
 
     private final String TECHNOLOGY="technology";
     private final String TITLE="title";
