@@ -89,7 +89,6 @@ public class Downloader {
                 if (statusCode != HttpStatus.SC_OK) {
                     return null;
                 }
-
                 InputStream inputStream = urlConnection.getInputStream();
                 if (inputStream != null) {
                     Bitmap bitmap = BitmapFactory.decodeStream(inputStream);

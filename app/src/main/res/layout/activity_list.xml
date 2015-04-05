@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ListActivity">
+
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

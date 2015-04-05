@@ -1,13 +1,11 @@
 package ru.kozhushko.task_1;
 
-import android.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 
 
 public class ListActivity extends ActionBarActivity{
 
-    FragmentManager fm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

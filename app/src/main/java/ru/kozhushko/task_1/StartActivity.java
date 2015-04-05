@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
@@ -40,6 +41,7 @@ public class StartActivity extends Activity {
         new Thread() {
             @Override
             public void run() {
+                Log.d("D","StartLoad");
                 JSONObject json = getJSONFromUrl("http://mobevo.ext.terrhq.ru/shr/j/ru/technology.js");
                 Intent intent=new Intent(getApplicationContext(), ListActivity.class);
                 intent.putExtra("JSON",json.toString());
