@@ -8,7 +8,6 @@ import android.util.LruCache;
 import android.widget.ImageView;
 
 import org.apache.http.HttpStatus;
-import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -16,7 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-//класс отвечает за кэширование и загрузки из сети
+//класс отвечает за кэширование и загрузку картинок из сети
 
 public class Downloader {
 
@@ -48,13 +47,15 @@ public class Downloader {
     private class DownloadTask extends AsyncTask<String, Void, Bitmap> {
         private final WeakReference<ImageView> imageViewReference;
         String url;
+        ImageView imageView;
         public DownloadTask(ImageView imageView) {
+            this.imageView=imageView;
             imageViewReference = new WeakReference<ImageView>(imageView);
         }
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
+            imageView.setImageResource(R.mipmap.ic_launcher);
         }
 
         @Override
@@ -74,8 +75,6 @@ public class Downloader {
                     if (bitmap != null) {
                         cache.put(url,bitmap);
                         imageView.setImageBitmap(bitmap);
-                    } else {
-                        imageView.setImageResource(R.mipmap.ic_launcher);
                     }
                 }
             }

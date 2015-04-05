@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
@@ -12,7 +11,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
@@ -62,7 +60,6 @@ public class StartActivity extends Activity {
             HttpEntity entry = response.getEntity();
             String responseText = null;
             responseText = EntityUtils.toString(entry, HTTP.UTF_8);
-            // Log.d(C.Tag_d, responseText);
             jsn = new JSONObject(responseText);
         } catch (UnsupportedEncodingException e) {
 
