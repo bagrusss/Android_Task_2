@@ -16,7 +16,6 @@ import java.net.URL;
 
 
 //класс отвечает за кэширование и загрузку картинок из сети
-
 public class Downloader {
 
     private LruCache<String, Bitmap> cache;
